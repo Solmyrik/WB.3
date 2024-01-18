@@ -4,6 +4,7 @@ import { formatPrice } from '../../utils/helpers';
 import { ProductData } from 'types';
 import html from './productDetail.tpl.html';
 import { cartService } from '../../services/cart.service';
+import { analytics } from 'src/services/sendAnalytics.service';
 
 class ProductDetail extends Component {
   more: ProductList;
@@ -41,6 +42,13 @@ class ProductDetail extends Component {
       .then((res) => res.json())
       .then((secretKey) => {
         this.view.secretKey.setAttribute('content', secretKey);
+
+        const log = this.product?.log ? 'viewCardPromo' : 'viewCard';
+        analytics.fetchAnalytics({
+          type: log,
+          payload: { ...this.product, secretKey },
+          timestamp: Date.now()
+        });
       });
 
     fetch('/api/getPopularProducts')
