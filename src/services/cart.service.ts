@@ -1,5 +1,6 @@
 import localforage from 'localforage';
 import { ProductData } from 'types';
+import { analytics } from './sendAnalytics.service';
 
 const DB = '__wb-cart';
 
@@ -11,6 +12,12 @@ class CartService {
   async addProduct(product: ProductData) {
     const products = await this.get();
     await this.set([...products, product]);
+
+    await analytics.fetchAnalytics({
+      type: 'addToCard',
+      payload: product,
+      timestamp: Date.now()
+    });
   }
 
   async removeProduct(product: ProductData) {
