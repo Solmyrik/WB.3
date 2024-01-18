@@ -1,58 +1,8 @@
 .search {
   font-family: 'ALS Hauss VF';
+  margin-bottom: 50px;
 
-  &__container {
-    gap: 16px;
-    justify-content: center;
-    max-width: 900px;
-    box-sizing: border-box;
-    margin: auto;
-    padding-top: 16px;
-    display: flex;
-    align-items: center;
-    flex-direction: column;
-    width: 100%;
-    margin-bottom: 40px;
-  }
-
-  &__body {
-    box-sizing: border-box;
-    display: flex;
-    max-height: 60px;
-    border: solid 3px transparent;
-    border-radius: 2% / 32%;
-    align-items: center;
-    width: 100%;
-    position: relative;
-    background-color: rgb(255, 255, 255);
-    background-clip: padding-box;
-    &:before {
-      box-sizing: border-box;
-      content: '';
-      position: absolute;
-      top: 0;
-      right: 0;
-      bottom: 0;
-      left: 0;
-      z-index: -1;
-      margin: -3px;
-      border-radius: inherit;
-      background: linear-gradient(102.42deg, #da15b8 59.69%, #8d06cc 100%);
-    }
-  }
-
-  &__button {
-    cursor: pointer;
-    height: 60px;
-    width: 60px;
-    padding-top: 3px;
-    background-color: rgba(255, 255, 255, 0);
-    border: 0;
-    border-radius: 10px;
-  }
-
-  &__svg {
-  }
+  margin-top: 50px;
 
   &__hints {
     display: flex;
@@ -78,6 +28,7 @@
     background: #f6f6fa;
     padding: 4px 6px 8px 6px;
     border-radius: 8px;
+    text-decoration: none;
 
     div {
       font-size: 22px;
@@ -89,32 +40,6 @@
       background-clip: text;
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
-    }
-  }
-
-  .svg-icon {
-    width: 24px; /* задайте ширину и высоту иконки */
-    height: 24px;
-    fill: #000; /* установите цвет иконки */
-  }
-}
-.input {
-  &__search {
-    padding: 0;
-    border: 0;
-    outline: none;
-    font-family: 'ALS Hauss VF';
-    font-size: 30px;
-    font-weight: 500;
-    line-height: 32px;
-    letter-spacing: -0.01em;
-    flex-grow: 1;
-    &::placeholder {
-      font-size: 30px;
-      font-weight: 550;
-      line-height: 32px;
-      letter-spacing: -0.01em;
-      color: #e6e1ef;
     }
   }
 }
